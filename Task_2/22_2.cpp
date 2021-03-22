@@ -3,19 +3,19 @@
 #include <string>
 
 int main() {
-
     std::ifstream text;
-    std::string word;
     std::string pathFile;
     std::cout << "Enter the absolute path to the text file: ";
     std::cin >> pathFile;
-    int counter = 0;
+    char buffer[25];
 
-    text.open(pathFile);
+    text.open(pathFile, std::ios::binary);
+
     if (text.is_open()) {
-        while (!text.eof()) {
-            text >> word;
-            std::cout << word << " ";
+        while(!text.eof()) {
+            text.read(buffer, sizeof(buffer));
+            buffer[text.gcount()] = 0;
+            std::cout << buffer;
         }
     }
     else std::cout << "File is not open!!!" << std::endl;
