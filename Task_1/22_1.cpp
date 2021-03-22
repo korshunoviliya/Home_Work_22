@@ -19,7 +19,7 @@ int main() {
     }
     else {
         std::cerr << "File is not open!!!" << std::endl;
-        return 0;
+        return 1;
     }
     std::cin.clear();
     std::cin.ignore();
