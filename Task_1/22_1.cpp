@@ -10,14 +10,17 @@ int main() {
     std::cin >> searchWord;
     int counter = 0;
 
-    text.open("C:\\Users\\User\\CLionProjects\\HomeWork_22.1\\words.txt");
+    text.open("..\\words.txt");
     if (text.is_open()) {
         while (!text.eof()) {
             text >> word;
             if (word == searchWord) counter++;
         }
     }
-    else std::cout << "File is not open!!!" << std::endl;
+    else {
+        std::cerr << "File is not open!!!" << std::endl;
+        return 0;
+    }
     std::cin.clear();
     std::cin.ignore();
     std::cout <<  "\nThe word occurs in the text " << counter << " times" << std::endl;
