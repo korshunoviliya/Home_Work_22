@@ -11,6 +11,7 @@ int main() {
     int counter = 0;
 
     text.open("..\\words.txt");
+
     if (text.is_open()) {
         while (!text.eof()) {
             text >> word;
@@ -21,8 +22,7 @@ int main() {
         std::cerr << "File is not open!!!" << std::endl;
         return 1;
     }
-    std::cin.clear();
-    std::cin.ignore();
+    
     std::cout <<  "\nThe word occurs in the text " << counter << " times" << std::endl;
     text.close();
     return 0;
