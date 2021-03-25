@@ -7,7 +7,7 @@ int main() {
     std::string pathFile;
     std::cout << "Enter the absolute path to the text file: ";
     std::cin >> pathFile;
-    char buffer[9];
+    char buffer[25];
 
     text.open(pathFile, std::ios::binary);
 
