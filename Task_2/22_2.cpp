@@ -7,13 +7,13 @@ int main() {
     std::string pathFile;
     std::cout << "Enter the absolute path to the text file: ";
     std::cin >> pathFile;
-    char buffer[25];
+    char buffer[9];
 
     text.open(pathFile, std::ios::binary);
 
     if (text.is_open()) {
         while(!text.eof()) {
-            text.read(buffer, sizeof(buffer));
+            text.read(buffer, sizeof(buffer) - 1);
             buffer[text.gcount()] = 0;
             std::cout << buffer;
         }
